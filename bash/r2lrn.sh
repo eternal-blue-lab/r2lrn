@@ -45,7 +45,7 @@ function take_answer {
 function setlevel {
 	[ -z "$1" ] || level="$1"
 	[ ! -r "$LEVELDIR/$level/config" ] && echo "Needed level does not exist. Seems that you're an r2ninja now. Going to level 1." && level=1
-	cd $LEVELDIR/$level/
+	cd "$LEVELDIR"/"$level"/
 	rm -r .workdir 2> /dev/null || true
 	mkdir .workdir
 	cp -- * .workdir/ 2> /dev/null || true
